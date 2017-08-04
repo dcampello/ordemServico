@@ -2,6 +2,17 @@ CREATE DATABASE `ordem_servico` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 use ordem_servico;
 
+CREATE TABLE `usuario` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ativo` bit(1) NOT NULL,
+  `data_registro` datetime NOT NULL,
+  `login` varchar(64) NOT NULL,
+  `nome` varchar(64) NOT NULL,
+  `senha` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_g1orfqvgih1w8s3vyg15fq2b8` (`login`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `ordemservico` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `data_registro` datetime NOT NULL,
@@ -21,13 +32,4 @@ CREATE TABLE `ordemservico` (
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `usuario` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `ativo` bit(1) NOT NULL,
-  `data_registro` datetime NOT NULL,
-  `login` varchar(64) NOT NULL,
-  `nome` varchar(64) NOT NULL,
-  `senha` varchar(128) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_g1orfqvgih1w8s3vyg15fq2b8` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
